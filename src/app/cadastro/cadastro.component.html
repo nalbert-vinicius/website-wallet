@@ -1,0 +1,37 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<body>
+    <div id="login">
+        <h3 class="text-center text-white pt-5">Criar nova conta</h3>
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                        <form id="login-form" class="form" action="" method="post">
+                            <h3 class="text-center text-info">Login</h3>
+                            <div [formGroup]="" class="form-group">
+                                <label class="text-info">Nome:</label><br>
+                                <input formControlName="nome" type="text" name="nome" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="text-info">E-mail:</label><br>
+                                <input formControlName="email" type="text" name="email" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="text-info">Senha:</label><br>
+                                <input formControlName="senha" type="text" name="senha" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <!--<label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>-->
+                                <input type="submit" name="submit" class="btn btn-info btn-md" value="Cadastrar">
+                            </div>
+                            <div id="register-link" class="text-right entrar">
+                                <a href="#" class="text-info">Já tem conta? então entre</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
