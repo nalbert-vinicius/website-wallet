@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Usuarios } from 'src/model/usuario-model';
+import { usuariosService } from 'src/services/usuariosService';
 
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
-  styleUrls: ['./cadastro.component.css']
+  styleUrls: ['./cadastro.component.css'],
+  providers: [usuariosService]
 })
 export class CadastroComponent implements OnInit {
 
@@ -14,9 +17,24 @@ export class CadastroComponent implements OnInit {
     'senha': new FormControl(null)
 
   })
-  constructor() { }
+  constructor(
+    public usuariosService: usuariosService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+
+  cadastrarUsuario(){
+    var usuario: Usuarios = new Usuarios(
+      this.formulario.value.nome,
+      this.formulario.value.email,
+      this.formulario.value.senha
+    );
+    
+    this.usuariosService.cadastrarUsuarios(usuario).then((data: any) =>{
+      console.log(data)
+    })
   }
 
 }

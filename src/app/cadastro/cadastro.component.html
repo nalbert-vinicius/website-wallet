@@ -7,9 +7,9 @@
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
-                        <form id="login-form" class="form" action="" method="post">
+                        <form [formGroup]="formulario" id="login-form" class="form" (ngSubmit)="cadastrarUsuario()">
                             <h3 class="text-center text-info">Login</h3>
-                            <div [formGroup]="" class="form-group">
+                            <div class="form-group">
                                 <label class="text-info">Nome:</label><br>
                                 <input formControlName="nome" type="text" name="nome" class="form-control">
                             </div>
